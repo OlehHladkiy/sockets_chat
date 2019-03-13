@@ -18,13 +18,13 @@ const Messanger = ({messages, onSubmitMessage, userName, users}) => {
             
             let newMessage = {
                   type: 'message',
-                  text: message,
+                  value: message,
                   time: 0,
                   user: '',
                   id: ''
             }
 
-            if(newMessage.text !== ''){
+            if(newMessage.value !== ''){
                   onSubmitMessage(newMessage);
                   setMessage('');
             }
