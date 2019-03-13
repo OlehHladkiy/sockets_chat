@@ -27,6 +27,8 @@ server =  app.listen(port, function(){
       console.log(`server is running on port ${port}`);
 })
 
+app.use(express.static('client/build'));
+
 var socket = require('socket.io');
 io = socket(server);
 
@@ -70,4 +72,9 @@ io.on('connection', (socket) => {
             --userCount;
             socket.broadcast.emit('user:left', userCount, leftUser);
       })
+})
+
+const path = require('path');
+app.get('/*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, '../clent', 'build', 'index.html'))
 })
