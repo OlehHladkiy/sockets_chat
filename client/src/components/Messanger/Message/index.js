@@ -25,7 +25,7 @@ const Message = ({item, i, userName}) => {
                                           {item.value}
                                     </span>
                               </InfoMessage>
-                              <TimeSection>{item.date}</TimeSection>
+                              <TimeSection>{item.date ? `${new Date(item.date).getUTCHours()}:${new Date(item.date).getUTCMinutes()}`:null}</TimeSection>
                         </MessageStyled>
                         }
             </MessageContainer>
