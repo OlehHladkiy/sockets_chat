@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
       next();
 });
 app.use('/api/messages', message);
-const port = process.env.PORT || "https://calm-citadel-92548.herokuapp.com";
+const port = process.env.PORT || 8080;
 
 server =  app.listen(port, function(){
       console.log(`server is running on port ${port}`);
