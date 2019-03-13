@@ -8,8 +8,8 @@ const MessagesSchema = new Schema({
     required: true
   },
   time: {
-    type: String,
-    required: true
+    type: Date,
+    default: Date.now
   },
   user: {
     type: String,

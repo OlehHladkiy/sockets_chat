@@ -32,21 +32,21 @@ app.use(express.static('client/build'));
 var socket = require('socket.io');
 io = socket(server);
 
-getDate = function() {
+// getDate = function() {
 
-      var date = new Date();
+//       var date = new Date();
     
-      var hour = date.getHours();
-      hour = (hour < 10 ? "0" : "") + hour;
+//       var hour = date.getHours();
+//       hour = (hour < 10 ? "0" : "") + hour;
     
-      var min  = date.getMinutes();
-      min = (min < 10 ? "0" : "") + min;
+//       var min  = date.getMinutes();
+//       min = (min < 10 ? "0" : "") + min;
 
-      var second = date.getSeconds();
-      second = (second < 10 ? "0" : "") + second;
+//       var second = date.getSeconds();
+//       second = (second < 10 ? "0" : "") + second;
     
-      return hour + ":" + min + ":" + second;
-    }
+//       return hour + ":" + min + ":" + second;
+//     }
 
 var userCount = 0;
 
@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
       });
         
       socket.on('send:message', function(msg) {
-            msg.time = getDate();
+            msg.time = new Date();
             socket.emit('send:message', msg);
             socket.broadcast.emit('send:message', msg);
       });
