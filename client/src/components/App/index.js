@@ -38,7 +38,7 @@ const App = () => {
                   value: `${userName} joined`
             };
             setMessages((prevMsg) => [...prevMsg, msg] );
-            axios.get('https://calm-citadel-92548.herokuapp.com/api/messages/')
+            axios.get('https://calm-citadel-92548.herokuapp.com/api/messages')
             .then(res => setMessages((prevMsg) => [...prevMsg, ...res.data]))
             .catch(err => console.log(err))
       }
@@ -57,7 +57,7 @@ const App = () => {
       }
 
       const messageSend = (msg) => {
-            axios.post('https://calm-citadel-92548.herokuapp.com/api/messages/',msg)
+            axios.post('https://calm-citadel-92548.herokuapp.com/api/messages',msg)
             .then(res => setMessages((prevMsg) => [...prevMsg, res.data]))
             .catch(err => console.log(err))
             msg.user = userName.value;
@@ -70,7 +70,7 @@ const App = () => {
             socket.on('user:left', userLeft);
             socket.on('send:message', messageReceive);
 
-            axios.get('https://calm-citadel-92548.herokuapp.com/api/messages/')
+            axios.get('https://calm-citadel-92548.herokuapp.com/api/messages')
                   .then(res => {setMessages((prevMsg) => [...prevMsg, ...res.data])})
                   .catch(err => console.log(err))
             return () => {
