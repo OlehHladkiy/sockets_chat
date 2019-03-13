@@ -7,9 +7,9 @@ const MessagesSchema = new Schema({
     type: String,
     required: true
   },
-  date: {
-    type: Date,
-    default: Date.now
+  time: {
+    type: String,
+    required: true
   },
   user: {
     type: String,

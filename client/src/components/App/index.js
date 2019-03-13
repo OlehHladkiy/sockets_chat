@@ -57,7 +57,7 @@ const App = () => {
       }
 
       const messageSend = (msg) => {
-            axios.post('https://calm-citadel-92548.herokuapp.com/api/messages',msg)
+            axios.post('https://calm-citadel-92548.herokuapp.com/api/messages', msg)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
             msg.user = userName.value;
