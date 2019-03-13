@@ -29,6 +29,9 @@ const App = () => {
       const userAccept = (msg) => {
             setUserName({...userName, value: msg.user, id: msg.id});
             setUsers(msg.users);
+            axios.get('https://calm-citadel-92548.herokuapp.com/api/messages')
+            .then(res => setMessages((prevMsg) => [...prevMsg, ...res.data]))
+            .catch(err => console.log(err))
       }
       
       const userJoin = (userCount, userName) => {
@@ -38,9 +41,6 @@ const App = () => {
                   value: `${userName} joined`
             };
             setMessages((prevMsg) => [...prevMsg, msg] );
-            axios.get('https://calm-citadel-92548.herokuapp.com/api/messages')
-            .then(res => setMessages((prevMsg) => [...prevMsg, ...res.data]))
-            .catch(err => console.log(err))
       }
       
       const userLeft = (userCount, userName) => {
