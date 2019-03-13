@@ -5,7 +5,7 @@ const message =  require('./router')
 const bodyParser = require('body-parser');
 var userId = 1;
 
-const db = 'mongodb://dima:dimapov19@ds255924.mlab.com:55924/socket'
+const db = 'mongodb://<dbuser>:<dbpassword>@ds217351.mlab.com:17351/heroku_dhcdb55v'
 
 mongoose
 .connect(db)
