@@ -4,6 +4,7 @@ import { MessageContainer, InfoMessage, TimeSection, MessageStyled, MessageStatu
 const Message = ({item, i, userName}) => {
       return (
             <MessageContainer key={i} user={userName === item.user}>
+                        {console.log(item.time)}
                         {item.type === 'status' ?
                               <MessageStyled>
                                     <MessageStatus>
