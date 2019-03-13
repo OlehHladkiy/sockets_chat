@@ -58,11 +58,10 @@ const App = () => {
 
       const messageSend = (msg) => {
             axios.post('https://calm-citadel-92548.herokuapp.com/api/messages',msg)
-            .then(res => { setMessages((prevMsg) => [...prevMsg, res.data]); 
-                  res.data.user = userName.value;
-                  socket.emit('send:message', res.data);
-            })
+            .then(res => setMessages((prevMsg) => [...prevMsg, res.data]))
             .catch(err => console.log(err))
+            msg.user = userName.value;
+            socket.emit('send:message', msg);
       }
 
       useEffect(() => {
