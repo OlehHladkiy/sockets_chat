@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const newMessage = new Messages({
     value: req.body.value,
-    user: req.body.user
+    user: req.body.user,
+    type: req.body.type
   });
 
   newMessage.save().then(message => res.json(message));

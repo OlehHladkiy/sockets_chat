@@ -4,7 +4,7 @@ import { MessageContainer, InfoMessage, TimeSection, MessageStyled, MessageStatu
 const Message = ({item, i, userName}) => {
       return (
             <MessageContainer key={i} user={userName === item.user}>
-                        {!item.date ?
+                        {item.type === 'status' ?
                               <MessageStyled>
                                     <MessageStatus>
                                           {item.value}

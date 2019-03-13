@@ -15,6 +15,10 @@ const MessagesSchema = new Schema({
     type: String,
     required: true
   },
+  type: {
+    type: String,
+    required: true
+  }
 });
 
 module.exports = Messages = mongoose.model('Messages', MessagesSchema);
