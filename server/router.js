@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Messages = require('./Messages')
+const Messages = require('./Messages');
 
 router.get('/', (req, res) => {
   Messages.find()
