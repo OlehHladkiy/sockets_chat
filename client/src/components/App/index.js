@@ -53,13 +53,12 @@ const App = () => {
       }
 
       const messageReceive = (msg) => {
-            console.log(msg);
             setMessages((prevMsg) => [...prevMsg, msg] );
       }
 
       const messageSend = (msg) => {
             axios.post('https://calm-citadel-92548.herokuapp.com/api/messages',msg)
-            .then(res => setMessages((prevMsg) => [...prevMsg, res.data]))
+            .then(res => console.log(res.data))
             .catch(err => console.log(err))
             msg.user = userName.value;
             socket.emit('send:message', msg);
