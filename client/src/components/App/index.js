@@ -70,9 +70,9 @@ const App = () => {
             socket.on('user:left', userLeft);
             socket.on('send:message', messageReceive);
 
-            axios.get('https://calm-citadel-92548.herokuapp.com/api/messages')
-                  .then(res => {setMessages((prevMsg) => [...prevMsg, ...res.data])})
-                  .catch(err => console.log(err))
+            // axios.get('https://calm-citadel-92548.herokuapp.com/api/messages')
+            //       .then(res => {setMessages((prevMsg) => [...prevMsg, ...res.data])})
+            //       .catch(err => console.log(err))
             return () => {
                   socket.emit('user:left', userName.value);
             }
