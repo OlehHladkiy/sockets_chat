@@ -32,22 +32,6 @@ app.use(express.static('client/build'));
 var socket = require('socket.io');
 io = socket(server);
 
-// getDate = function() {
-
-//       var date = new Date();
-    
-//       var hour = date.getHours();
-//       hour = (hour < 10 ? "0" : "") + hour;
-    
-//       var min  = date.getMinutes();
-//       min = (min < 10 ? "0" : "") + min;
-
-//       var second = date.getSeconds();
-//       second = (second < 10 ? "0" : "") + second;
-    
-//       return hour + ":" + min + ":" + second;
-//     }
-
 var userCount = 0;
 
 io.on('connection', (socket) => {
