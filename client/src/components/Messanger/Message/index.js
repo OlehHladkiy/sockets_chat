@@ -26,7 +26,7 @@ const Message = ({item, i, userName}) => {
                                           {item.value}
                                     </span>
                               </InfoMessage>
-                              <TimeSection>{`${new Date(item.time).getHours()}:${new Date(item.time).getMinutes()}`}</TimeSection>
+                              <TimeSection>{`${new Date(item.time.toString()).getHours()}:${new Date(item.time.toString()).getMinutes()}`}</TimeSection>
                         </MessageStyled>
                         }
             </MessageContainer>
