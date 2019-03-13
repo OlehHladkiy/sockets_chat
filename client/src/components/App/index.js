@@ -4,7 +4,7 @@ import Messanger from '../Messanger';
 import  axios from 'axios';
 import io from 'socket.io-client';
 
-var socket = io('localhost:8080');
+var socket = io('https://calm-citadel-92548.herokuapp.com');
 
 const App = () => {
       const [userName, setUserName] = useState({value: '', valid: true, id: 0});
