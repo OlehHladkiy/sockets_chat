@@ -3,7 +3,7 @@ import { MessageContainer, InfoMessage, TimeSection, MessageStyled, MessageStatu
 
 const Message = ({item, i, userName}) => {
       return (
-            <MessageContainer key={i} user={userName.toLowerCase() === item.user}>
+            <MessageContainer key={i} user={userName === item.user}>
                         {item.type === 'status' ?
                               <MessageStyled>
                                     <MessageStatus>
@@ -17,7 +17,7 @@ const Message = ({item, i, userName}) => {
                                           style={{fontSize: '17px', 
                                           color: "blue"}}
                                     >
-                                          {userName.toLowerCase() === item.user ? null : item.user}
+                                          {userName === item.user ? null : item.user}
                                     </span>
                                     <span 
                                           style={{fontSize: '13px', wordWrap: "break-word"}}

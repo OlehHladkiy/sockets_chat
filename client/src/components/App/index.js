@@ -21,7 +21,7 @@ const App = () => {
             if(!userName.value){
                   setUserName({...userName, valid: false});
             } else {
-                  socket.emit('user:request', userName.value);
+                  socket.emit('user:request', userName.value.toLowerCase());
                   setVisible(false)
             }
       };
