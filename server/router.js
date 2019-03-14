@@ -5,7 +5,7 @@ const Messages = require('./Messages');
 
 router.get('/', (req, res) => {
   Messages.find()
-    .sort({date: 1})
+    .sort({time: 1})
     .then(messages => {res.json(messages)})
 })
 
